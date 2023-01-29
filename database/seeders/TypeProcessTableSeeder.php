@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\TypeCase;
 use App\Models\TypeProcess;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
