@@ -2,10 +2,18 @@
 
 namespace App\Providers;
 
+use App\Listeners\FailedLoginListener;
+use App\Listeners\LoginListener;
+use App\Listeners\LogoutListener;
+use App\Listeners\PasswordBackupListener;
+use Illuminate\Auth\Events\Failed;
+use Illuminate\Auth\Events\Login;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Spatie\Backup\Events\BackupZipWasCreated;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -18,6 +26,18 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        Failed::class => [
+            FailedLoginListener::class
+        ],
+        Login::class => [
+            LoginListener::class
+        ],
+        Logout::class => [
+            LogoutListener::class
+        ],
+        BackupZipWasCreated::class => [
+            PasswordBackupListener::class
+        ]
     ];
 
     /**
