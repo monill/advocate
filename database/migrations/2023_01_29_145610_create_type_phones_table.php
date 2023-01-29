@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email', 100)->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+        Schema::create('type_phones', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 45); // Residencial, Comercial, Celular, FAX, Recados
+            $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('password_resets');
+        Schema::dropIfExists('type_phones');
     }
 };

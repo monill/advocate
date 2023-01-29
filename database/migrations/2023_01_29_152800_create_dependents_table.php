@@ -13,17 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('dependents', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('customer_id')->index();
+            $table->unsignedBigInteger('kinship_id')->index();
             $table->string('name');
-            $table->string('email', 100)->unique();
-            $table->string('password', 70);
-            $table->string('oab', 10);
-            $table->string('avatar', 45)->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
+            $table->date('birthday')->nullable();
             $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('kinship_id')->references('id')->on('kinships');
         });
     }
 
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('dependents');
     }
 };

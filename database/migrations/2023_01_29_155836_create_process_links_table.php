@@ -13,17 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('process_links', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('process_id')->index();
             $table->string('name');
-            $table->string('email', 100)->unique();
-            $table->string('password', 70);
-            $table->string('oab', 10);
-            $table->string('avatar', 45)->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->rememberToken();
+            $table->text('link');
             $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('process_id')->references('id')->on('processes');
         });
     }
 
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('process_links');
     }
 };
