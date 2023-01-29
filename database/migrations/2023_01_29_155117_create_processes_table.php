@@ -38,7 +38,7 @@ return new class extends Migration
             $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('case_type_id')->references('id')->on('type_cases');
+            $table->foreign('case_type_id')->references('id')->on('type_process');
             $table->foreign('action_type_id')->references('id')->on('type_actions');
             $table->foreign('situation_id')->references('id')->on('situations');
             $table->foreign('lawyer_id')->references('id')->on('lawyers');

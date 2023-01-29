@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('type_cases', function (Blueprint $table) {
+        Schema::create('type_process', function (Blueprint $table) {
             $table->id();
             $table->string('name', 45);
             $table->softDeletes();
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_cases');
+        Schema::dropIfExists('type_process');
     }
 };
