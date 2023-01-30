@@ -13,7 +13,7 @@
             <div class="card-body">
                 @includeIf('errors.errors', [$errors])
                 @include('errors.messages')
-                <form class="form form-vertical" action="{{ route('prints.store') }}" method="post">
+                <form class="form form-vertical" action="{{ route('printings.store') }}" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="name">Nome:</label>
