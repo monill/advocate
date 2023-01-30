@@ -14,7 +14,7 @@ class IncomesController extends Controller
 
     public function index()
     {
-        return view('dashboard.financials.incomes.index');
+        return view('dashboard.financial.incomes.index');
     }
 
     public function create()

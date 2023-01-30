@@ -17,12 +17,12 @@ class KinshipsController extends Controller
     public function index()
     {
         $kinships = DB::table('kinships')->select('id', 'name')->get();
-        return view('dashboard.configurations.kinships.index', compact('kinships'));
+        return view('dashboard.configuration.kinships.index', compact('kinships'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.kinships.create');
+        return view('dashboard.configuration.kinships.create');
     }
 
     public function store(KinshipsRequest $request)
@@ -34,7 +34,7 @@ class KinshipsController extends Controller
     public function edit($kinship_id)
     {
         $kinship = Kinship::findOrFail($kinship_id);
-        return view('dashboard.configurations.kinships.edit', compact('kinship'));
+        return view('dashboard.configuration.kinships.edit', compact('kinship'));
     }
 
     public function update(KinshipsRequest $request, $kinship_id)

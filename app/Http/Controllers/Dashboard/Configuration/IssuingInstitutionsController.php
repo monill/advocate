@@ -18,12 +18,12 @@ class IssuingInstitutionsController extends Controller
     public function index()
     {
         $institutions = DB::table('issuing_institutions')->select('id', 'name')->get();
-        return view('dashboard.configurations.issuing_institutions.index', compact('institutions'));
+        return view('dashboard.configuration.issuing_institutions.index', compact('institutions'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.issuing_institutions.create');
+        return view('dashboard.configuration.issuing_institutions.create');
     }
 
     public function store(IssuingInstitutionsRequest $request)
@@ -35,7 +35,7 @@ class IssuingInstitutionsController extends Controller
     public function edit($institution_id)
     {
         $institution = IssuingInstitution::findOrFail($institution_id);
-        return view('dashboard.configurations.issuing_institutions.edit', compact('institution'));
+        return view('dashboard.configuration.issuing_institutions.edit', compact('institution'));
     }
 
     public function update(IssuingInstitutionsRequest $request, $institution_id)

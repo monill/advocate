@@ -17,12 +17,12 @@ class MaritalStatusController extends Controller
     public function index()
     {
         $statuses = DB::table('marital_status')->select('id', 'name')->get();
-        return view('dashboard.configurations.marital_statuses.index', compact('statuses'));
+        return view('dashboard.configuration.marital_statuses.index', compact('statuses'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.marital_statuses.create');
+        return view('dashboard.configuration.marital_statuses.create');
     }
 
     public function store(MaritalStatusRequest $request)
@@ -34,7 +34,7 @@ class MaritalStatusController extends Controller
     public function edit($status_id)
     {
         $status = MaritalStatus::findOrFail($status_id);
-        return view('dashboard.configurations.marital_statuses.edit', compact('status'));
+        return view('dashboard.configuration.marital_statuses.edit', compact('status'));
     }
 
     public function update(MaritalStatusRequest $request, $status_id)

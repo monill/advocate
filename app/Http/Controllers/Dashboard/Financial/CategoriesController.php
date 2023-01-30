@@ -18,12 +18,12 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories = DB::table('financial_categories')->select('id', 'name')->get();
-        return view('dashboard.financials.categories.index', compact('categories'));
+        return view('dashboard.financial.categories.index', compact('categories'));
     }
 
     public function create()
     {
-        return view('dashboard.financials.categories.create');
+        return view('dashboard.financial.categories.create');
     }
 
     public function store(CategoriesRequest $request)
@@ -35,7 +35,7 @@ class CategoriesController extends Controller
     public function edit($category_id)
     {
         $category = FinancialCategory::findOrFail($category_id);
-        return view('dashboard.financials.categories.edit', compact('category'));
+        return view('dashboard.financial.categories.edit', compact('category'));
     }
 
     public function update(CategoriesRequest $request, $category_id)

@@ -17,12 +17,12 @@ class OccupationsController extends Controller
     public function index()
     {
         $professionals = DB::table('occupations')->select('id', 'name')->get();
-        return view('dashboard.configurations.professionals.index', compact('professionals'));
+        return view('dashboard.configuration.professionals.index', compact('professionals'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.professionals.create');
+        return view('dashboard.configuration.professionals.create');
     }
 
     public function store(OccupationsRequest $request)
@@ -34,7 +34,7 @@ class OccupationsController extends Controller
     public function edit($professional_id)
     {
         $professional = Occupation::findOrFail($professional_id);
-        return view('dashboard.configurations.professionals.edit', compact('professional'));
+        return view('dashboard.configuration.professionals.edit', compact('professional'));
     }
 
     public function update(OccupationsRequest $request, $professional_id)

@@ -18,12 +18,12 @@ class CommitmentSituationController extends Controller
     public function index()
     {
         $situations = DB::table('commitment_situations')->select('id', 'name')->get();
-        return view('dashboard.configurations.commitment_situations.index', compact('situations'));
+        return view('dashboard.configuration.commitment_situations.index', compact('situations'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.commitment_situations.create');
+        return view('dashboard.configuration.commitment_situations.create');
     }
 
     public function store(CommitmentSituationRequest $request)
@@ -35,7 +35,7 @@ class CommitmentSituationController extends Controller
     public function edit($situation_id)
     {
         $situation = CommitmentSituation::findOrFail($situation_id);
-        return view('dashboard.configurations.commitment_situations.edit', compact('situation'));
+        return view('dashboard.configuration.commitment_situations.edit', compact('situation'));
     }
 
     public function update(CommitmentSituationRequest $request, $situation_id)

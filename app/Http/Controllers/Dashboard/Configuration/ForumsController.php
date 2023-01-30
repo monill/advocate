@@ -17,12 +17,12 @@ class ForumsController extends Controller
     public function index()
     {
         $forums = DB::table('forums')->select('id', 'name')->get();
-        return view('dashboard.configurations.forums.index', compact('forums'));
+        return view('dashboard.configuration.forums.index', compact('forums'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.forums.create');
+        return view('dashboard.configuration.forums.create');
     }
 
     public function store(ForumsRequest $request)
@@ -34,7 +34,7 @@ class ForumsController extends Controller
     public function edit($forum_id)
     {
         $forum = Forum::findOrFail($forum_id);
-        return view('dashboard.configurations.forums.edit', compact('forum'));
+        return view('dashboard.configuration.forums.edit', compact('forum'));
     }
 
     public function update(ForumsRequest $request, $forum_id)

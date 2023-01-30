@@ -19,13 +19,13 @@ class HolidaysController extends Controller
         //TODO
         //adicionar mini calendario com todos os meses???
         $holidays = DB::table('holidays')->select('id', 'name', 'day', 'month', 'year', 'is_repeated')->get();
-        return view('dashboard.configurations.holidays.index', compact('holidays'));
+        return view('dashboard.configuration.holidays.index', compact('holidays'));
     }
 
     public function create()
     {
         $months = months();
-        return view('dashboard.configurations.holidays.create', compact('months'));
+        return view('dashboard.configuration.holidays.create', compact('months'));
     }
 
     public function store(HolidaysRequest $request)
@@ -38,7 +38,7 @@ class HolidaysController extends Controller
     {
         $holiday = Holiday::findOrFail($holiday_id);
         $months = months();
-        return view('dashboard.configurations.holidays.edit', compact('holiday', 'months'));
+        return view('dashboard.configuration.holidays.edit', compact('holiday', 'months'));
     }
 
     public function update(HolidaysRequest $request, $holiday_id)

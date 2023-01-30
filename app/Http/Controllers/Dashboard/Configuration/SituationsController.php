@@ -17,12 +17,12 @@ class SituationsController extends Controller
     public function index()
     {
         $situations = DB::table('situations')->select('id', 'name')->get();
-        return view('dashboard.configurations.situations.index', compact('situations'));
+        return view('dashboard.configuration.situations.index', compact('situations'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.situations.create');
+        return view('dashboard.configuration.situations.create');
     }
 
     public function store(SituationsRequest $request)
@@ -34,7 +34,7 @@ class SituationsController extends Controller
     public function edit($situation_id)
     {
         $situation = Situation::findOrFail($situation_id);
-        return view('dashboard.configurations.situations.edit', compact('situation'));
+        return view('dashboard.configuration.situations.edit', compact('situation'));
     }
 
     public function update(SituationsRequest $request, $situation_id)

@@ -17,12 +17,12 @@ class CourtsController extends Controller
     public function index()
     {
         $courts = DB::table('courts')->select('id', 'name')->get();
-        return view('dashboard.configurations.courts.index', compact('courts'));
+        return view('dashboard.configuration.courts.index', compact('courts'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.courts.create');
+        return view('dashboard.configuration.courts.create');
     }
 
     public function store(CourtsRequest $request)
@@ -34,7 +34,7 @@ class CourtsController extends Controller
     public function edit($court_id)
     {
         $court = Court::findOrFail($court_id);
-        return view('dashboard.configurations.courts.edit', compact('court'));
+        return view('dashboard.configuration.courts.edit', compact('court'));
     }
 
     public function update(CourtsRequest $request, $court_id)

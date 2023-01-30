@@ -18,12 +18,12 @@ class ProceduralConditionController extends Controller
     public function index()
     {
         $conditions = DB::table('procedural_conditions')->select('id', 'name')->get();
-        return view('dashboard.configurations.procedural_conditions.index', compact('conditions'));
+        return view('dashboard.configuration.procedural_conditions.index', compact('conditions'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.procedural_conditions.create');
+        return view('dashboard.configuration.procedural_conditions.create');
     }
 
     public function store(ProceduralConditionRequest $request)
@@ -35,7 +35,7 @@ class ProceduralConditionController extends Controller
     public function edit($condition_id)
     {
         $condition = ProceduralCondition::findOrFail($condition_id);
-        return view('dashboard.configurations.procedural_conditions.edit', compact('condition'));
+        return view('dashboard.configuration.procedural_conditions.edit', compact('condition'));
     }
 
     public function update(ProceduralConditionRequest $request, $condition_id)

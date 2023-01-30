@@ -14,7 +14,7 @@ class ExpensesController extends Controller
 
     public function index()
     {
-        return view('dashboard.financials.expenses.index');
+        return view('dashboard.financial.expenses.index');
     }
 
     public function create()

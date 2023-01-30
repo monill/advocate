@@ -17,12 +17,12 @@ class BanksController extends Controller
     public function index()
     {
         $banks = DB::table('banks')->select('id', 'code', 'name', 'ispb')->get();
-        return view('dashboard.configurations.banks.index', compact('banks'));
+        return view('dashboard.configuration.banks.index', compact('banks'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.banks.create');
+        return view('dashboard.configuration.banks.create');
     }
 
     public function store(BanksRequest $request)
@@ -34,7 +34,7 @@ class BanksController extends Controller
     public function edit($bank_id)
     {
         $bank = Bank::findOrFail($bank_id);
-        return view('dashboard.configurations.banks.edit', compact('bank'));
+        return view('dashboard.configuration.banks.edit', compact('bank'));
     }
 
     public function update(BanksRequest $request, $bank_id)

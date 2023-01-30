@@ -17,12 +17,12 @@ class GendersController extends Controller
     public function index()
     {
         $genders = DB::table('genders')->select('id', 'name')->get();
-        return view('dashboard.configurations.genders.index', compact('genders'));
+        return view('dashboard.configuration.genders.index', compact('genders'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.genders.create');
+        return view('dashboard.configuration.genders.create');
     }
 
     public function store(GendersRequest $request)
@@ -34,7 +34,7 @@ class GendersController extends Controller
     public function edit($gender_id)
     {
         $gender = Gender::findOrFail($gender_id);
-        return view('dashboard.configurations.genders.edit', compact('gender'));
+        return view('dashboard.configuration.genders.edit', compact('gender'));
     }
 
     public function update(GendersRequest $request, $gender_id)

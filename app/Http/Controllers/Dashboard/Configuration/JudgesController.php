@@ -17,12 +17,12 @@ class JudgesController extends Controller
     public function index()
     {
         $judges = DB::table('judges')->select('id', 'name')->get();
-        return view('dashboard.configurations.judges.index', compact('judges'));
+        return view('dashboard.configuration.judges.index', compact('judges'));
     }
 
     public function create()
     {
-        return view('dashboard.configurations.judges.create');
+        return view('dashboard.configuration.judges.create');
     }
 
     public function store(JudgesRequest $request)
@@ -34,7 +34,7 @@ class JudgesController extends Controller
     public function edit($judge_id)
     {
         $judge = Judge::findOrFail($judge_id);
-        return view('dashboard.configurations.judges.edit', compact('judge'));
+        return view('dashboard.configuration.judges.edit', compact('judge'));
     }
 
     public function update(JudgesRequest $request, $judge_id)
