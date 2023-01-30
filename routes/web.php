@@ -71,8 +71,8 @@ Route::prefix('dashboard')->group(function () {
     Route::resource('clientes', App\Http\Controllers\Dashboard\Registration\CustomersController::class)->except('show');
     //Lawyers
     Route::resource('lawyers', App\Http\Controllers\Dashboard\Registration\LawyersController::class)->except('show');
-    //prints
-    Route::resource('prints', App\Http\Controllers\Dashboard\Registration\PrintingsController::class)->except('show');
+    //Printings
+    Route::resource('printings', App\Http\Controllers\Dashboard\Registration\PrintingsController::class)->except('show');
 
     # Types Folder
     Route::prefix('types')->group(function () {
