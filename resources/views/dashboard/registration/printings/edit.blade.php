@@ -13,7 +13,7 @@
             <div class="card-body">
                 @includeIf('errors.errors', [$errors])
                 @include('errors.messages')
-                <form class="form form-vertical" action="{{ route('prints.update', $print->id) }}" method="post">
+                <form class="form form-vertical" action="{{ route('printings.update', $print->id) }}" method="post">
                     @csrf
                     @method('PUT')
                     <div class="mb-3">
