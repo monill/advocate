@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('income_parcels', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('income_id')->index();
-            $table->unsignedBigInteger('payment_method_id')->index();
+            $table->foreignId('income_id');
+            $table->foreignId('payment_method_id');
             $table->string('document')->nullable();
             $table->date('due_date');
             $table->decimal('amount', 2);

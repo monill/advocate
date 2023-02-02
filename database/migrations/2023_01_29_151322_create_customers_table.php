@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('client_type_id')->index();
-            $table->unsignedBigInteger('gender_id')->index()->nullable();
-            $table->unsignedBigInteger('marital_status_id')->index()->nullable();
-            $table->unsignedBigInteger('issuing_institution_id')->index()->nullable();
+            $table->foreignId('client_type_id');
+            $table->foreignId('gender_id')->nullable();
+            $table->foreignId('marital_status_id')->nullable();
+            $table->foreignId('issuing_institution_id')->nullable();
 
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();

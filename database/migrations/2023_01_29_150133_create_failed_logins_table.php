@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('failed_logins', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->index()->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->string('email');
             $table->string('ip', 70);
             $table->string('user_agent')->nullable();

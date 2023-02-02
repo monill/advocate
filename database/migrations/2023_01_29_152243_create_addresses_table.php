@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('customer_id')->index();
-            $table->unsignedBigInteger('state_id')->index();
-            $table->unsignedBigInteger('city_id')->index();
-            $table->unsignedBigInteger('address_type_id')->index();
+            $table->foreignId('customer_id');
+            $table->foreignId('state_id');
+            $table->foreignId('city_id');
+            $table->foreignId('address_type_id');
             $table->string('zip_code', 10);
             $table->string('street');
             $table->string('number', 10);

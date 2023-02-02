@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('printings', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->index();
+            $table->foreignId('user_id');
             $table->string('name');
             $table->longText('content');
             $table->softDeletes();

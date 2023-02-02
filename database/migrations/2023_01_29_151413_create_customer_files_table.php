@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('file_customers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('customer_id')->index();
+            $table->foreignId('customer_id');
             $table->string('name')->nullable();
             $table->string('real_name')->nullable();
             $table->string('extension', 4);
