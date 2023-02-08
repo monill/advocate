@@ -16,7 +16,6 @@ class TypeCustomersTableSeeder extends Seeder
     public function run()
     {
         $types = [
-            ['name' => 'Indefinido'],
             ['name' => 'Física'],
             ['name' => 'Jurídica'],
         ];
